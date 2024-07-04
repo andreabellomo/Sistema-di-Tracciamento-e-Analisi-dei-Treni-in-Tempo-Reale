@@ -1,3 +1,4 @@
-/primaprova/myenv
-/training
-.txt
+/tmp
+/data_elastic
+/Dockerfile
+/train_data.csv

@@ -1,20 +1,26 @@
 import json
-from datetime import datetime
+from datetime import datetime,timedelta
 import os
 import time
 import socket
 import csv
 import requests
+import json
 
 TCP_IP = 'logstash'
 TCP_PORT = 5002
 RETRY_DELAY = 60
 CSV_FILE_PATH = 'train_data.csv'
+MAPPING_FILE_PATH = 'mapping.json'
 LAST_PROCESSED_IDS = set()
-# Converte la data dal formato "16/06/2024 00:09:00" al formato "2024-06-16T16:11:55.270Z"
+
+with open(MAPPING_FILE_PATH, 'r') as file:
+    map = json.load(file)
+
 def convert_to_iso_format(date_str):
    
     date_obj = datetime.strptime(date_str, "%d/%m/%Y %H:%M:%S")
+    date_obj = date_obj - timedelta(hours=2)
     iso_format = date_obj.isoformat() + ".000Z"
     return iso_format
 
@@ -30,6 +36,7 @@ def send_data(row):
             "oraPart": row[3],
             "ritardoPart": row[4],
             "stazArr": row[5],
+            "regione" : map.get(row[2],"unkown"),
             "oraArr": row[6],
             "ritardoArr": row[7],
             "provvedimenti": row[8],
@@ -39,7 +46,6 @@ def send_data(row):
     connected = False
     while not connected:
         try:
-            # Create a TCP/IP socket and connect to Logstash
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.connect((TCP_IP, TCP_PORT))
             sock.sendall(json.dumps(data).encode('utf-8'))
