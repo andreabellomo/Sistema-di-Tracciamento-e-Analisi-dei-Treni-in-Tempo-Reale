@@ -11,7 +11,7 @@ La necessità di migliorare l'affidabilità e l'efficienza del servizio ferrovia
 
 ### **Architettura del Sistema & Data Flow**
 
-![Architettura del Sistema](images\tap_flow.png)
+![Architettura del Sistema](images/tap_flow.png)
 
 
 1. **Logstash**:
@@ -47,9 +47,9 @@ docker compose up
 ```
 
 ## Demo </a>
-![Demo1](images\1.png)
-![Demo2](images\2.png)
-![Demo3](images\3.png)
+![Demo1](images/1.png)
+![Demo2](images/2.png)
+![Demo3](images/3.png)
 
 
 ## ✍️ Autore</a>
