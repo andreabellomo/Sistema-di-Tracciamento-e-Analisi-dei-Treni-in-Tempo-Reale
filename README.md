@@ -1,7 +1,7 @@
 ## **Progetto: STA-TR (Sistema di Tracciamento e Analisi dei Treni in Tempo Reale)**
 
 ### **Motivazione**
-La necessità di migliorare l'affidabilità e l'efficienza del servizio ferroviario italiano è evidente. Attualmente, i dati aperti sui ritardi dei treni sono limitati e frammentati, rendendo difficile per i cittadini e le autorità monitorare le performance e intervenire per migliorare il servizio. Il nostro progetto, STA-TR, mira a colmare questa lacuna fornendo un sistema di monitoraggio e analisi in tempo reale del servizio ferroviario.
+La necessità di migliorare l'affidabilità e l'efficienza del servizio ferroviario italiano è evidente. Attualmente, i dati aperti sui ritardi dei treni sono limitati e frammentati, rendendo difficile per i cittadini e le autorità monitorare le performance e intervenire per migliorare il servizio. STA-TR, mira a colmare questa lacuna fornendo un sistema di monitoraggio e analisi in tempo reale del servizio ferroviario.
 
 ### **Obiettivi**
 1. **Raccolta Dati**: Implementare un sistema per raccogliere dati sui treni in tempo reale da API esistenti.
